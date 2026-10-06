@@ -1,0 +1,33 @@
+characteristic,level,n,unweighted_pct,weighted_pct
+Age group,18-29,175,6.4,16.2
+Age group,30-44,318,11.7,27.4
+Age group,60+,1937,71.2,31.3
+Age group,45-59,291,10.7,25.1
+Sex,Male,1244,45.7,49.1
+Sex,Female,1477,54.3,50.9
+Race and ethnicity,White NH,1955,71.8,67.5
+Race and ethnicity,Other NH,169,6.2,9.5
+Race and ethnicity,Black NH,263,9.7,9.7
+Race and ethnicity,Hispanic,334,12.3,13.2
+Household income,"$60,000 to under $100,000",665,24.4,27.9
+Household income,"Less than $30,000",668,24.5,11.8
+Household income,"$30,000 to under $60,000",699,25.7,27.1
+Household income,"$100,000 or more",689,25.3,33.1
+Institution type,Bank,1894,69.6,69.0
+Institution type,Credit Union,674,24.8,23.9
+Institution type,Online-only bank,119,4.4,6.2
+Institution type,I'm not sure,27,1.0,0.7
+Institution type,SKIPPED ON WEB,7,0.3,0.1
+"Mobile banking, past month",Yes,1743,64.1,75.9
+"Mobile banking, past month",No,961,35.3,23.5
+"Mobile banking, past month",SKIPPED ON WEB,17,0.6,0.6
+"Online banking, past month",No,1134,41.7,44.5
+"Online banking, past month",Yes,1573,57.8,54.9
+"Online banking, past month",SKIPPED ON WEB,13,0.5,0.6
+"Online banking, past month",DON'T KNOW,1,0.0,0.0
+P2P payment service,Yes,799,29.4,34.2
+P2P payment service,No,1922,70.6,65.8
+Automated chat,Yes,476,17.5,22.6
+Automated chat,No,2245,82.5,77.4
+Account alerts,No,1072,39.4,37.3
+Account alerts,Yes,1649,60.6,62.7

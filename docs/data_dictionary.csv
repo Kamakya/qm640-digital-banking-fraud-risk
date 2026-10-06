@@ -1,0 +1,41 @@
+variable,type,meaning,coding_units,role
+CASEID,Integer (ID),Unique respondent identifier assigned by the survey vendor,No unit; one row per respondent,Record key; not used in models
+WEIGHT_FINAL,Continuous,Final survey weight for the population of U.S. adults aged 18+ with a bank or credit union account,"Unitless ratio; mean 1.00, range 0.03 to 10.21",Weighted descriptive statistics; weighted sensitivity models
+FRAUD1,Ordinal,"Times in the past year the respondent experienced fraud or scams involving the primary checking, savings or money market account (not a credit card)",Count band: Never; One time; Two or three times; More than three times; I'm not sure,"Source of FRAUD_EXP (RQ1, RQ4) and REPEAT_VICTIM (RQ2)"
+FRAUD2,Nominal,Whether money was lost to the most recent fraud or scam (asked only if FRAUD1 is one time or more),"Lost, all recovered; Lost, some recovered; Lost, none recovered; No money taken; I don't know",Source of FIN_LOSS and UNREC_LOSS (RQ2)
+FRAUD8,Ordinal,"Times in the past year the bank placed a fraud alert, stopped a transaction, contacted the respondent or took other action for suspected fraud that turned out not to be fraud",Count band: Never; One time; Two or three times; More than three times,Source of FALSE_POS (RQ3)
+MOBILE,Binary,Used the primary institution's mobile banking application on a smartphone or tablet in the past month,Yes / No,"Focal IV (RQ1, RQ3); control (RQ2); feature (RQ4)"
+WEB,Binary,Used the primary institution's online banking on a laptop or desktop computer in the past month,Yes / No,"Focal IV (RQ1, RQ3); feature (RQ4)"
+ACC2_5,Binary,Currently uses the institution's online customer-service chat with automated real-time responses,Yes / No,"Focal IV (RQ1, RQ3); feature (RQ4)"
+ACC2_6,Binary,"Currently uses a person-to-person (P2P) payment service through the institution, such as Zelle",Yes / No,"Focal IV (RQ1, RQ3); feature (RQ4)"
+ALERT_1,Binary,"Currently receives fraud, low-balance, overdraft-fee or large-charge alerts from the institution",Yes / No,"Feature (RQ4); sensitivity covariate (RQ1, RQ3)"
+DEVICE1,Ordinal,"How often the respondent uses a laptop, desktop or personal computer",5-point frequency: Very frequently to Never,"Feature (RQ4), coded very frequently vs. less"
+DEVICE2,Ordinal,How often the respondent uses a smartphone or mobile phone,5-point frequency: Very frequently to Never,"Feature (RQ4), coded very frequently vs. less"
+TYPE,Nominal,Type of primary financial institution,Credit union; Bank; Online-only bank; I'm not sure,Focal IV as CREDIT_UNION (RQ3); feature (RQ4)
+BIGBANK,Binary,Primary account is held at one of the 10 largest U.S. banks (CFPB recode),Yes / No / Unknown,Sensitivity covariate (RQ3)
+FRAUD3_1,Binary,A debit card was the product involved in the most recent fraud (victims only),Yes / No,Focal IV as DEBIT_INVOLVED (RQ2)
+FRAUD3_2 to FRAUD3_8,Binary (7 items),"Other product involved: P2P service, wire transfer, personal check, cashier's check or money order, cash withdrawal, loan, other (victims only)",Yes / No for each item,Descriptive; collapsed into the reference group of DEBIT_INVOLVED
+SCAM_1 to SCAM_12,Binary (12 items),"Type of fraud or scam, e.g., trusted-person exploitation, imposter, phishing, investment, prize, online shopping (victims only)",Yes / No for each item,SCAM_3 is focal IV as PHISHING (RQ2); others descriptive
+FRAUD4_1,Binary,Reported the most recent fraud to the primary bank or credit union (victims only),Yes / No,Descriptive only; follows the outcome in time
+FRAUD5_1,Binary,The institution identified the fraud or scam and told the respondent about it (victims only),Yes / No,Focal IV as BANK_DETECTED (RQ2)
+"FRAUD5_5, FRAUD5_6",Binary (2 items),"The institution returned the money, or helped recover some or all of it (victims only)",Yes / No for each item,Excluded from models because they are consequences of a loss; descriptive only
+FRAUD6,Binary,The institution's response made the respondent feel to blame (asked only if FRAUD4_1 is yes),Yes / No / I don't know,Descriptive customer-experience evidence
+TRUST1,Ordinal,Agreement that the primary bank or credit union is trustworthy,5-point agreement: Strongly agree to Strongly disagree,Source of TRUST_HIGH; supporting analysis under RQ3
+TRUST3,Ordinal,Agreement that the institution attempts to give a fair resolution when there is a problem,5-point agreement: Strongly agree to Strongly disagree,Supporting analysis under RQ3
+AGE4,Ordinal,Age group of the respondent,"Years, banded: 18-29; 30-44; 45-59; 60+",Control (RQ1 to RQ3); feature (RQ4); fairness audit
+SEX,Binary,Sex of the respondent,Male / Female,Control (RQ1 to RQ3); feature (RQ4); fairness audit
+RACETHNICITY,Nominal,Combined race and ethnicity,"6 categories, collapsed to RACE4",Control (RQ1 to RQ3); feature (RQ4); fairness audit
+EDUC5,Ordinal,Highest level of education,"5 categories, collapsed to EDUC4",Control (RQ1 to RQ3); feature (RQ4)
+INCOME4,Ordinal,Annual household income,"U.S. dollars, banded: under 30,000; 30,000 to under 60,000; 60,000 to under 100,000; 100,000 or more",Control (RQ1 to RQ3); feature (RQ4)
+URBAN3,Nominal,Urbanicity of residence,Urban; Suburban; Rural,Feature (RQ4)
+FRAUD_EXP,Derived binary,Experienced fraud or a scam at least once in the past year,1 = one time or more; 0 = never; not sure and skipped set to missing,"Dependent variable (RQ1, RQ4); control (RQ3)"
+FIN_LOSS,Derived binary,"Money was taken from the account in the most recent fraud, whether or not later recovered",1 = any money lost; 0 = no money taken; don't know and skipped set to missing,Dependent variable (RQ2)
+UNREC_LOSS,Derived binary,Money was lost and not fully recovered,1 = some or none recovered; 0 = all recovered or no money taken,Secondary outcome (RQ2)
+FALSE_POS,Derived binary,Experienced at least one false-positive fraud intervention in the past year,1 = one time or more; 0 = never; skipped set to missing,Dependent variable (RQ3)
+"MOBILE_USE, WEB_USE, P2P_USE, CHAT_USE, ALERT_USE",Derived binary (5),"Indicator versions of MOBILE, WEB, ACC2_6, ACC2_5 and ALERT_1",1 = yes; 0 = no; special responses set to missing,Model-ready predictors
+CREDIT_UNION,Derived binary,Primary institution is a credit union,1 = credit union; 0 = bank or online-only bank,Focal IV (RQ3)
+"DEBIT_INVOLVED, BANK_DETECTED, PHISHING",Derived binary (3),"Indicator versions of FRAUD3_1, FRAUD5_1 and SCAM_3",1 = yes; 0 = no; defined for fraud victims only,Focal IVs (RQ2)
+REPEAT_VICTIM,Derived binary,Experienced fraud two or more times in the past year,1 = two or more times; 0 = one time; defined for fraud victims only,Focal IV (RQ2)
+"RACE4, EDUC4",Derived nominal / ordinal,"Collapsed race/ethnicity (White NH, Black NH, Hispanic, Other NH) and education (HS or less, Some college, Bachelor, Postgraduate)",4 categories each,Controls and features
+TRUST_HIGH,Derived binary,Strongly agrees that the institution is trustworthy,1 = strongly agree; 0 = any other valid answer,Supporting outcome under RQ3
+RISK_SEGMENT,Derived ordinal,Risk band assigned from the RQ4 model's predicted probability of fraud experience,Lower; Moderate; Higher (cut points fixed on training data),Output of RQ4; input to the decision framework

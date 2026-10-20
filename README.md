@@ -30,14 +30,18 @@ qm640-digital-banking-fraud-risk/
 ├── README.md
 ├── requirements.txt
 ├── data/
-│   └── raw/cfpb_nafbs-puf-labeled_2026-02.csv
+│   ├── raw/cfpb_nafbs-puf-labeled_2026-02.csv
+│   └── processed/nafbs_analysis.csv   analysis-ready file written by 03_cleaning_eda.py
 ├── docs/
 │   ├── data_dictionary.csv
 │   └── source_links.md
 ├── src/
 │   ├── prep.py               derivation rules for all variables
-│   ├── 01_sample_size.py     sample-size calculations (synopsis Tables 4, 5 and A1)
-│   └── 02_descriptives.py    sample profile and outcome prevalence (Table 6, Figure 3)
+│   ├── 01_sample_size.py     sample-size calculations (interim report Tables 3, A1 and A2)
+│   ├── 02_descriptives.py    sample profile and outcome prevalence
+│   ├── 03_cleaning_eda.py    cleaning log, EDA figures, processed data file (interim report)
+│   ├── 04_models.py          RQ1-RQ3 logistic regressions, RQ4 classifiers and risk segments
+│   └── 05_sensitivity.py     RQ4 check without account alerts
 ├── notebooks/                analysis notebooks for RQ1 to RQ4 (added during the project)
 └── outputs/                  result tables and figures
 ```
@@ -54,7 +58,10 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
 python src/01_sample_size.py     # prints every sample-size input and result
-python src/02_descriptives.py    # writes Table 6 and Figure 3 to outputs/
+python src/02_descriptives.py    # sample profile and outcome chart
+python src/03_cleaning_eda.py    # cleaning log + EDA figures to outputs/, data/processed/nafbs_analysis.csv
+python src/04_models.py          # model results (outputs/models.json) and figures, about 3 minutes
+python src/05_sensitivity.py     # outputs/sensitivity.json
 ```
 
 ## Key derivation rules (`src/prep.py`)

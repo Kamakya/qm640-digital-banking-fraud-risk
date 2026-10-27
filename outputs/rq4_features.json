@@ -1,0 +1,883 @@
+{
+ "results": {
+  "S0: original 14 features": {
+   "Logistic regression (L2)": {
+    "features": 14,
+    "parameters": 24,
+    "cv_auc": 0.6202549982642575,
+    "test_auc": 0.6378756114605171,
+    "ci": [
+     0.5749474498391315,
+     0.6915669759499167
+    ],
+    "pr_auc": 0.4319965776312492,
+    "train_auc": 0.6523625783571838,
+    "params": {
+     "C": 1
+    }
+   },
+   "Logistic regression (L1, selects features)": {
+    "features": 14,
+    "parameters": 24,
+    "cv_auc": 0.6253981043332895,
+    "test_auc": 0.617160826594789,
+    "ci": [
+     0.5552610840637977,
+     0.6732561627132125
+    ],
+    "pr_auc": 0.41279034214971416,
+    "train_auc": 0.6409068205089782,
+    "params": {
+     "C": 0.1
+    },
+    "nonzero": 8,
+    "top": [
+     [
+      "bin__ALERT_USE",
+      0.4856254688089231
+     ],
+     [
+      "bin__CHAT_USE",
+      0.30078758231012676
+     ],
+     [
+      "cat__INCOME4_Less than $30,000",
+      0.2869554624863189
+     ],
+     [
+      "cat__RACE4_White NH",
+      -0.20536528876853122
+     ],
+     [
+      "bin__COMPUTER_VF",
+      -0.14103061628682306
+     ],
+     [
+      "bin__P2P_USE",
+      0.06692049498210381
+     ],
+     [
+      "bin__MOBILE_USE",
+      0.00943475693419181
+     ],
+     [
+      "cat__EDUC4_Some college",
+      0.0026962225582155396
+     ]
+    ]
+   },
+   "Random Forest": {
+    "features": 14,
+    "parameters": 24,
+    "cv_auc": 0.630299217567736,
+    "test_auc": 0.6152540680842568,
+    "ci": [
+     0.554346261932048,
+     0.6706762218094936
+    ],
+    "pr_auc": 0.4107188399036695,
+    "train_auc": 0.6602844584301092,
+    "params": {
+     "max_depth": 3,
+     "max_features": "sqrt",
+     "min_samples_leaf": 50
+    }
+   },
+   "Gradient Boosting": {
+    "features": 14,
+    "parameters": 24,
+    "cv_auc": 0.6252640687825874,
+    "test_auc": 0.607048018368773,
+    "ci": [
+     0.5456116427979218,
+     0.661657875752438
+    ],
+    "pr_auc": 0.360419837844372,
+    "train_auc": 0.7076752578606927,
+    "params": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "n_estimators": 100,
+     "subsample": 0.8
+    }
+   }
+  },
+  "S1: + finer demographics and household": {
+   "Logistic regression (L2)": {
+    "features": 28,
+    "parameters": 71,
+    "cv_auc": 0.6259937757622943,
+    "test_auc": 0.6377158829989018,
+    "ci": [
+     0.5755375598264396,
+     0.6933178168978397
+    ],
+    "pr_auc": 0.42058024948632544,
+    "train_auc": 0.677459354161984,
+    "params": {
+     "C": 0.03
+    },
+    "d_vs_S0": [
+     -0.0005312772388175213,
+     -0.037058075263629135,
+     0.03607434044066907
+    ]
+   },
+   "Logistic regression (L1, selects features)": {
+    "features": 28,
+    "parameters": 71,
+    "cv_auc": 0.6277032293235997,
+    "test_auc": 0.6338823999201358,
+    "ci": [
+     0.5733972022906184,
+     0.6868509327129125
+    ],
+    "pr_auc": 0.4224784382460134,
+    "train_auc": 0.6584351040183811,
+    "params": {
+     "C": 0.1
+    },
+    "nonzero": 17,
+    "top": [
+     [
+      "bin__ALERT_USE",
+      0.4779490561758576
+     ],
+     [
+      "cat__HOUSING_c_Owned or being bought by you or someone in your household",
+      -0.3696829940663048
+     ],
+     [
+      "bin__CHAT_USE",
+      0.25457843684714965
+     ],
+     [
+      "cat__EMPLOY_c_Not working \u2013 retired",
+      -0.2527596818838783
+     ],
+     [
+      "cat__MARITAL_c_Never married",
+      -0.1448116543628839
+     ],
+     [
+      "cat__INCOME4_Less than $30,000",
+      0.1398515925976864
+     ],
+     [
+      "cat__MARITAL_c_Widowed",
+      -0.13177319533753135
+     ],
+     [
+      "cat__INCOME9_c_$100,000 to under $150,000",
+      -0.1162656932251259
+     ],
+     [
+      "cat__RACE4_White NH",
+      -0.10858710318230831
+     ],
+     [
+      "bin__COMPUTER_VF",
+      -0.09917406797944854
+     ],
+     [
+      "cat__MARITAL_c_Married",
+      -0.09405753635051882
+     ],
+     [
+      "cat__HHSIZE_c_Two persons",
+      -0.07722692550484819
+     ],
+     [
+      "cat__PHONESERVICE_c_Have cellphone, but mostly use landline",
+      -0.06699073667025057
+     ],
+     [
+      "bin__P2P_USE",
+      0.04278895777720658
+     ],
+     [
+      "cat__MARITAL_c_Separated",
+      0.026111624460577243
+     ]
+    ],
+    "d_vs_S0": [
+     0.016162883190319208,
+     -0.013433202900891509,
+     0.04544028460475652
+    ]
+   },
+   "Random Forest": {
+    "features": 28,
+    "parameters": 71,
+    "cv_auc": 0.6469494747272526,
+    "test_auc": 0.6208844963561944,
+    "ci": [
+     0.5606280511964837,
+     0.6747826615045295
+    ],
+    "pr_auc": 0.4010514294049792,
+    "train_auc": 0.7539309707549761,
+    "params": {
+     "max_depth": 5,
+     "max_features": 0.3,
+     "min_samples_leaf": 10
+    },
+    "d_vs_S0": [
+     0.004853709826555708,
+     -0.023349070672806546,
+     0.03260646338273286
+    ]
+   },
+   "Gradient Boosting": {
+    "features": 28,
+    "parameters": 71,
+    "cv_auc": 0.6440951052062163,
+    "test_auc": 0.6242387940501147,
+    "ci": [
+     0.5663509334211894,
+     0.6787867695045657
+    ],
+    "pr_auc": 0.3989898840560243,
+    "train_auc": 0.7460752728453335,
+    "params": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "n_estimators": 100,
+     "subsample": 0.8
+    },
+    "d_vs_S0": [
+     0.016698972192899966,
+     -0.01405144903430899,
+     0.04898901947917761
+    ]
+   }
+  },
+  "S2: + banking relationship and channels": {
+   "Logistic regression (L2)": {
+    "features": 58,
+    "parameters": 108,
+    "cv_auc": 0.6707885705570892,
+    "test_auc": 0.7013876410102825,
+    "ci": [
+     0.6435204689984102,
+     0.7532550256319576
+    ],
+    "pr_auc": 0.49092138506844446,
+    "train_auc": 0.727519292724957,
+    "params": {
+     "C": 0.03
+    },
+    "d_vs_S0": [
+     0.06295213270991913,
+     0.02082894926736053,
+     0.11192608044266976
+    ]
+   },
+   "Logistic regression (L1, selects features)": {
+    "features": 58,
+    "parameters": 108,
+    "cv_auc": 0.6693491576593429,
+    "test_auc": 0.7215134271738044,
+    "ci": [
+     0.6638061427810176,
+     0.7720363829615877
+    ],
+    "pr_auc": 0.5075902927791476,
+    "train_auc": 0.7097206613221447,
+    "params": {
+     "C": 0.1
+    },
+    "nonzero": 32,
+    "top": [
+     [
+      "cat__OVER_c_I have never had an overdraft on my account.",
+      -0.6518847362266119
+     ],
+     [
+      "cat__OVER_c_Never",
+      -0.5120844859668392
+     ],
+     [
+      "bin__ALERT_USE",
+      0.39701869776651716
+     ],
+     [
+      "cat__HOUSING_c_Owned or being bought by you or someone in your household",
+      -0.3112163870406167
+     ],
+     [
+      "bin__PHONE_REP_b",
+      0.28580510625720434
+     ],
+     [
+      "cat__EMPLOY_c_Not working \u2013 retired",
+      -0.20536885846885453
+     ],
+     [
+      "bin__TRAIN1_b",
+      0.20311433119821656
+     ],
+     [
+      "bin__ATM_b",
+      0.1643643009426412
+     ],
+     [
+      "cat__LENGTH_c_More than 30 years",
+      -0.13185743418865922
+     ],
+     [
+      "cat__MARITAL_c_Widowed",
+      -0.13038276600829096
+     ],
+     [
+      "cat__MARITAL_c_Never married",
+      -0.12071285625674627
+     ],
+     [
+      "bin__BRANCH_b",
+      0.11371726084482164
+     ],
+     [
+      "bin__CHAT_USE",
+      0.11308648216433392
+     ],
+     [
+      "bin__FEAT1_3_b",
+      0.11090501188519745
+     ],
+     [
+      "cat__INCOME9_c_$100,000 to under $150,000",
+      -0.10624766536959857
+     ]
+    ],
+    "d_vs_S0": [
+     0.10380899237881663,
+     0.05537341730996258,
+     0.1546581263599475
+    ]
+   },
+   "Random Forest": {
+    "features": 58,
+    "parameters": 108,
+    "cv_auc": 0.6885663441218997,
+    "test_auc": 0.7028251971648198,
+    "ci": [
+     0.6488525269867982,
+     0.7537941616926882
+    ],
+    "pr_auc": 0.46306116103798467,
+    "train_auc": 0.7659474039109913,
+    "params": {
+     "max_depth": 5,
+     "max_features": "sqrt",
+     "min_samples_leaf": 25
+    },
+    "d_vs_S0": [
+     0.08682598780425073,
+     0.04421781459551619,
+     0.13637351902693365
+    ]
+   },
+   "Gradient Boosting": {
+    "features": 58,
+    "parameters": 108,
+    "cv_auc": 0.6840288310195718,
+    "test_auc": 0.7041229909154438,
+    "ci": [
+     0.6469424661538823,
+     0.7557194053344127
+    ],
+    "pr_auc": 0.49901931590271476,
+    "train_auc": 0.7934392247945854,
+    "params": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "n_estimators": 100,
+     "subsample": 0.8
+    },
+    "d_vs_S0": [
+     0.09635347662101035,
+     0.04976799879436789,
+     0.1455927331402657
+    ]
+   }
+  },
+  "S3: + financial situation, life events, support (all)": {
+   "Logistic regression (L2)": {
+    "features": 74,
+    "parameters": 130,
+    "cv_auc": 0.6881990155138304,
+    "test_auc": 0.7157033043825496,
+    "ci": [
+     0.6592908904679222,
+     0.7646731886559743
+    ],
+    "pr_auc": 0.4886221171314283,
+    "train_auc": 0.7298506530805924,
+    "params": {
+     "C": 0.01
+    },
+    "d_vs_S0": [
+     0.0771561091032828,
+     0.03141946816593276,
+     0.12434589727194145
+    ]
+   },
+   "Logistic regression (L1, selects features)": {
+    "features": 74,
+    "parameters": 130,
+    "cv_auc": 0.6894513200068755,
+    "test_auc": 0.7286013776579814,
+    "ci": [
+     0.6724853282782212,
+     0.7768311389996018
+    ],
+    "pr_auc": 0.49766614505561624,
+    "train_auc": 0.721379336180415,
+    "params": {
+     "C": 0.1
+    },
+    "nonzero": 35,
+    "top": [
+     [
+      "cat__OVER_c_I have never had an overdraft on my account.",
+      -0.4054579343328723
+     ],
+     [
+      "bin__ALERT_USE",
+      0.3853257169790898
+     ],
+     [
+      "cat__CREDREC_c_Very good",
+      -0.35480690915038415
+     ],
+     [
+      "num__FWB_n",
+      -0.30821500612670033
+     ],
+     [
+      "cat__OVER_c_Never",
+      -0.2997140228171533
+     ],
+     [
+      "bin__PHONE_REP_b",
+      0.2290327812000628
+     ],
+     [
+      "bin__TRAIN1_b",
+      0.21403607941594388
+     ],
+     [
+      "cat__HOUSING_c_Owned or being bought by you or someone in your household",
+      -0.19128138286066612
+     ],
+     [
+      "bin__FEAT1_3_b",
+      0.12509462534284346
+     ],
+     [
+      "bin__BRANCH_b",
+      0.11870675909439773
+     ],
+     [
+      "bin__ATM_b",
+      0.09328865967235624
+     ],
+     [
+      "cat__EMPLOY_c_Not working \u2013 retired",
+      -0.09308696563089112
+     ],
+     [
+      "cat__OVER_c_Sometimes",
+      0.08685383997072631
+     ],
+     [
+      "cat__MARITAL_c_Widowed",
+      -0.08652484703721322
+     ],
+     [
+      "cat__MARITAL_c_Never married",
+      -0.07877010494957348
+     ]
+    ],
+    "d_vs_S0": [
+     0.11074908013654274,
+     0.06282778428034352,
+     0.16066224206781488
+    ]
+   },
+   "Random Forest": {
+    "features": 74,
+    "parameters": 130,
+    "cv_auc": 0.7033493510345363,
+    "test_auc": 0.7197763801537388,
+    "ci": [
+     0.6646705448707352,
+     0.7696621174625996
+    ],
+    "pr_auc": 0.4830053234442731,
+    "train_auc": 0.7951249968781999,
+    "params": {
+     "max_depth": 5,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "d_vs_S0": [
+     0.10381840099865706,
+     0.05831627418409226,
+     0.15294644503788057
+    ]
+   },
+   "Gradient Boosting": {
+    "features": 74,
+    "parameters": 130,
+    "cv_auc": 0.6931805332268295,
+    "test_auc": 0.7187381451532395,
+    "ci": [
+     0.6616865702863545,
+     0.7661727464354711
+    ],
+    "pr_auc": 0.4767765768444925,
+    "train_auc": 0.8492632551634574,
+    "params": {
+     "learning_rate": 0.03,
+     "max_depth": 3,
+     "n_estimators": 200,
+     "subsample": 0.8
+    },
+    "d_vs_S0": [
+     0.11104708892262188,
+     0.061218327818952326,
+     0.15910182876188128
+    ]
+   }
+  },
+  "S4: all, excluding possible reactions to fraud (strict)": {
+   "Logistic regression (L2)": {
+    "features": 67,
+    "parameters": 120,
+    "cv_auc": 0.646385969302636,
+    "test_auc": 0.679864230807627,
+    "ci": [
+     0.6238295518653765,
+     0.7296098979956253
+    ],
+    "pr_auc": 0.4699844003681263,
+    "train_auc": 0.6993743912489698,
+    "params": {
+     "C": 0.01
+    },
+    "d_vs_S0": [
+     0.041553981825507735,
+     -0.0059410161747602405,
+     0.09340562254478144
+    ]
+   },
+   "Logistic regression (L1, selects features)": {
+    "features": 67,
+    "parameters": 120,
+    "cv_auc": 0.6448519858242079,
+    "test_auc": 0.6943995208146152,
+    "ci": [
+     0.6387875195115044,
+     0.745555227086853
+    ],
+    "pr_auc": 0.47539708554719823,
+    "train_auc": 0.6908874653480181,
+    "params": {
+     "C": 0.1
+    },
+    "nonzero": 33,
+    "top": [
+     [
+      "cat__OVER_c_I have never had an overdraft on my account.",
+      -0.7211497860748473
+     ],
+     [
+      "cat__OVER_c_Never",
+      -0.5519139857734328
+     ],
+     [
+      "cat__HOUSING_c_Owned or being bought by you or someone in your household",
+      -0.32387730668849796
+     ],
+     [
+      "bin__ATM_b",
+      0.20440711944249026
+     ],
+     [
+      "cat__EMPLOY_c_Not working \u2013 retired",
+      -0.19266600652628302
+     ],
+     [
+      "bin__CHAT_USE",
+      0.17421010754393462
+     ],
+     [
+      "bin__FEAT1_3_b",
+      0.16519832756093672
+     ],
+     [
+      "cat__MARITAL_c_Never married",
+      -0.1425384956885055
+     ],
+     [
+      "bin__BRANCH_b",
+      0.13233454992546953
+     ],
+     [
+      "cat__INCOME9_c_$100,000 to under $150,000",
+      -0.1253747192350683
+     ],
+     [
+      "bin__CG_b",
+      0.12222283035231395
+     ],
+     [
+      "cat__LENGTH_c_More than 30 years",
+      -0.12067876703525962
+     ],
+     [
+      "cat__MARITAL_c_Widowed",
+      -0.11076675287534873
+     ],
+     [
+      "cat__MARITAL_c_Married",
+      -0.10083974637113542
+     ],
+     [
+      "num__DEBT_n",
+      0.09607097903533497
+     ]
+    ],
+    "d_vs_S0": [
+     0.07684948006631098,
+     0.019241788295614896,
+     0.13462884520524201
+    ]
+   },
+   "Random Forest": {
+    "features": 67,
+    "parameters": 120,
+    "cv_auc": 0.6610189103244659,
+    "test_auc": 0.6808824997504243,
+    "ci": [
+     0.6264986447550485,
+     0.7313643116729743
+    ],
+    "pr_auc": 0.4528929374711786,
+    "train_auc": 0.7781124347543766,
+    "params": {
+     "max_depth": 5,
+     "max_features": "sqrt",
+     "min_samples_leaf": 10
+    },
+    "d_vs_S0": [
+     0.06531831350137353,
+     0.014932565696292874,
+     0.11734467880341419
+    ]
+   },
+   "Gradient Boosting": {
+    "features": 67,
+    "parameters": 120,
+    "cv_auc": 0.6495739004998264,
+    "test_auc": 0.6814615154237795,
+    "ci": [
+     0.6247799950482658,
+     0.7348187655694033
+    ],
+    "pr_auc": 0.4520545102177139,
+    "train_auc": 0.7505007367448366,
+    "params": {
+     "learning_rate": 0.03,
+     "max_depth": 2,
+     "n_estimators": 200,
+     "subsample": 0.8
+    },
+    "d_vs_S0": [
+     0.07378879447842479,
+     0.019240744427226134,
+     0.1274908431977095
+    ]
+   }
+  }
+ },
+ "riley_N": {
+  "S0: original 14 features": 1975,
+  "S1: + finer demographics and household": 5843,
+  "S2: + banking relationship and channels": 8887,
+  "S3: + financial situation, life events, support (all)": 10697,
+  "S4: all, excluding possible reactions to fraud (strict)": 9875
+ },
+ "n_train": 2023,
+ "n_test": 506,
+ "topk": {
+  "S0 Random Forest": {
+   "top 10%": {
+    "flagged": 51,
+    "TP": 26,
+    "FP": 25,
+    "precision": 0.5098039215686274,
+    "recall": 0.1925925925925926,
+    "lift": 1.9108206245461146
+   },
+   "top 20%": {
+    "flagged": 102,
+    "TP": 43,
+    "FP": 59,
+    "precision": 0.4215686274509804,
+    "recall": 0.31851851851851853,
+    "lift": 1.5801016702977486
+   },
+   "top 33%": {
+    "flagged": 167,
+    "TP": 61,
+    "FP": 106,
+    "precision": 0.3652694610778443,
+    "recall": 0.45185185185185184,
+    "lift": 1.3690840541139941
+   }
+  },
+  "S0 Logistic regression (L2)": {
+   "top 10%": {
+    "flagged": 51,
+    "TP": 25,
+    "FP": 26,
+    "precision": 0.49019607843137253,
+    "recall": 0.18518518518518517,
+    "lift": 1.8373275236020332
+   },
+   "top 20%": {
+    "flagged": 102,
+    "TP": 44,
+    "FP": 58,
+    "precision": 0.43137254901960786,
+    "recall": 0.32592592592592595,
+    "lift": 1.6168482207697894
+   },
+   "top 33%": {
+    "flagged": 167,
+    "TP": 62,
+    "FP": 105,
+    "precision": 0.3712574850299401,
+    "recall": 0.45925925925925926,
+    "lift": 1.3915280550011087
+   }
+  },
+  "S4 Logistic regression (L1, selects features)": {
+   "top 10%": {
+    "flagged": 51,
+    "TP": 30,
+    "FP": 21,
+    "precision": 0.5882352941176471,
+    "recall": 0.2222222222222222,
+    "lift": 2.20479302832244
+   },
+   "top 20%": {
+    "flagged": 102,
+    "TP": 48,
+    "FP": 54,
+    "precision": 0.47058823529411764,
+    "recall": 0.35555555555555557,
+    "lift": 1.7638344226579519
+   },
+   "top 33%": {
+    "flagged": 167,
+    "TP": 75,
+    "FP": 92,
+    "precision": 0.4491017964071856,
+    "recall": 0.5555555555555556,
+    "lift": 1.6833000665335993
+   }
+  },
+  "S3 Logistic regression (L1, selects features)": {
+   "top 10%": {
+    "flagged": 51,
+    "TP": 31,
+    "FP": 20,
+    "precision": 0.6078431372549019,
+    "recall": 0.22962962962962963,
+    "lift": 2.278286129266521
+   },
+   "top 20%": {
+    "flagged": 102,
+    "TP": 53,
+    "FP": 49,
+    "precision": 0.5196078431372549,
+    "recall": 0.3925925925925926,
+    "lift": 1.9475671750181556
+   },
+   "top 33%": {
+    "flagged": 167,
+    "TP": 77,
+    "FP": 90,
+    "precision": 0.46107784431137727,
+    "recall": 0.5703703703703704,
+    "lift": 1.7281880683078288
+   }
+  }
+ },
+ "s4_l1_top": [
+  [
+   "cat__OVER_c_I have never had an overdraft on my account.",
+   -0.7211497860748473
+  ],
+  [
+   "cat__OVER_c_Never",
+   -0.5519139857734328
+  ],
+  [
+   "cat__HOUSING_c_Owned or being bought by you or someone in your household",
+   -0.32387730668849796
+  ],
+  [
+   "bin__ATM_b",
+   0.20440711944249026
+  ],
+  [
+   "cat__EMPLOY_c_Not working \u2013 retired",
+   -0.19266600652628302
+  ],
+  [
+   "bin__CHAT_USE",
+   0.17421010754393462
+  ],
+  [
+   "bin__FEAT1_3_b",
+   0.16519832756093672
+  ],
+  [
+   "cat__MARITAL_c_Never married",
+   -0.1425384956885055
+  ],
+  [
+   "bin__BRANCH_b",
+   0.13233454992546953
+  ],
+  [
+   "cat__INCOME9_c_$100,000 to under $150,000",
+   -0.1253747192350683
+  ],
+  [
+   "bin__CG_b",
+   0.12222283035231395
+  ],
+  [
+   "cat__LENGTH_c_More than 30 years",
+   -0.12067876703525962
+  ],
+  [
+   "cat__MARITAL_c_Widowed",
+   -0.11076675287534873
+  ],
+  [
+   "cat__MARITAL_c_Married",
+   -0.10083974637113542
+  ],
+  [
+   "num__DEBT_n",
+   0.09607097903533497
+  ]
+ ]
+}

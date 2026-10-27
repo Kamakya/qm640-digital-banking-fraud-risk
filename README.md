@@ -41,10 +41,20 @@ qm640-digital-banking-fraud-risk/
 │   ├── 02_descriptives.py    sample profile and outcome prevalence
 │   ├── 03_cleaning_eda.py    cleaning log, EDA figures, processed data file (interim report)
 │   ├── 04_models.py          RQ1-RQ3 logistic regressions, RQ4 classifiers and risk segments
-│   └── 05_sensitivity.py     RQ4 check without account alerts
-├── notebooks/                analysis notebooks for RQ1 to RQ4 (added during the project)
+│   ├── 05_sensitivity.py     RQ4 check without account alerts
+│   ├── 06_rq4_features.py    RQ4 with expanded input variables (mentor feedback)
+│   └── 07_rq4_errors.py      RQ4 precision/recall trade-off and false positive / false negative examples
+├── notebooks/
+│   └── QM640_Fraud_Risk_Analysis.ipynb   the full analysis, step by step, with outputs
 └── outputs/                  result tables and figures
 ```
+
+## Notebook
+
+`notebooks/QM640_Fraud_Risk_Analysis.ipynb` runs the whole analysis in one place (setup, variable derivation,
+data cleaning, sample size, EDA, RQ1-RQ3 regressions, RQ4 models, sensitivity check, mentor feedback on
+RQ4, summary), with an explanation after each step. It gives the same results as the scripts below. Open it
+in Jupyter or Google Colab and choose Run all (about 10 minutes); in Colab it downloads the data from this repository.
 
 ## How to run
 
@@ -62,6 +72,8 @@ python src/02_descriptives.py    # sample profile and outcome chart
 python src/03_cleaning_eda.py    # cleaning log + EDA figures to outputs/, data/processed/nafbs_analysis.csv
 python src/04_models.py          # model results (outputs/models.json) and figures, about 3 minutes
 python src/05_sensitivity.py     # outputs/sensitivity.json
+python src/06_rq4_features.py    # outputs/rq4_features.json, about 5 minutes
+python src/07_rq4_errors.py      # outputs/rq4_errors.json, fig_pr_tradeoff.png, fig_score_overlap.png
 ```
 
 ## Key derivation rules (`src/prep.py`)
